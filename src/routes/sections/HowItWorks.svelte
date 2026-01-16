@@ -34,7 +34,7 @@
     {#each steps as step}
       <div class="step">
         <img src={step.image} alt={step.imageAltText} class="step__image" />
-        <p class="step__title">{step.title}</p>
+        <p class="step__title l-medium-font">{step.title}</p>
         <p class="step__description">{step.description}</p>
       </div>
     {/each}
@@ -71,7 +71,7 @@
     padding-top: 1em;
     padding-bottom: 1em;
     border-radius: 16px;
-    background-color: var(--light-gray);
+    background-color: var(--gray);
     width: 100%;
     flex: 1 1 0%;
   }
@@ -83,8 +83,7 @@
   .step__title {
     margin-top: 1em;
     margin-bottom: 1em;
-    font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
   }
   .section__subtitle,
   .step__description {

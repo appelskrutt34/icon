@@ -5,7 +5,7 @@
 
   let qas = [
     {
-      question: "What is ICON",
+      question: "What is ICON?",
       answer:
         "ICON is your AI-powered personal fitness coach, built from the minds of real athletes and trainers. It learns about you your goals, habits, and preferences then creates a personalized plan that evolves daily.",
     },
@@ -67,14 +67,16 @@
         class={expandedQuestion == i ? "qa active" : "qa"}
         onclick={() => toggleQuestion(i)}
       >
-        <h2 class="qa__question">
+        <p class="l-medium-font qa__question">
+          {String(i + 1).padStart(2, "0")}
+          {" "}
           {qa.question}
           {#if expandedQuestion == i}
             <ArrowUp></ArrowUp>
           {:else}
             <ArrowDown></ArrowDown>
           {/if}
-        </h2>
+        </p>
         {#if expandedQuestion == i}
           <p in:slide out:slide class="qa__answer">{qa.answer}</p>
         {/if}
@@ -100,30 +102,56 @@
   .section__subtitle {
     color: var(--dark-white);
   }
-  .qa {
-    text-align: left;
-    padding-right: 1em;
-    padding-left: 1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border-radius: 16px;
-    background-color: var(--light-gray);
-  }
   .qas {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
     width: 700px;
   }
+  .qa {
+    position: relative;
+    padding: 1em;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    text-align: left;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 16px;
+    background-color: var(--gray);
+  }
+  .qa.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1px; /* border thickness */
+    border-radius: 16px;
+    background: linear-gradient(90deg, var(--blue), var(--red), var(--blue));
+    background-size: 200% 200%;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 0;
+    transition: color 0.3s ease;
+  }
   .qa__question {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-weight: 600;
   }
   .qa__answer {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     margin-right: 1em;
+    color: var(--dark-white);
   }
   .qa:hover .qa__question {
     color: var(--red);

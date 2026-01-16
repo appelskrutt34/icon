@@ -58,7 +58,7 @@
     <div class="features">
       {#each features as feature, i}
         <button class="feature" onclick={() => selectFeature(i)}>
-          <h2>{feature.title}</h2>
+          <p class="l-xxlarge-font">{feature.title}</p>
           <p class="feature__description">{feature.subtitle}</p>
         </button>
       {/each}
@@ -78,14 +78,14 @@
         class={expandedFeature == i ? "feature active" : "feature"}
         onclick={() => toggleFeature(i)}
       >
-        <h2 class="feature__title--phone">
+        <p class="l-xxlarge-font feature__title--phone">
           {feature.title}
           {#if expandedFeature == i}
             <ArrowUp color="fill: var(--red)"></ArrowUp>
           {:else}
             <ArrowDown></ArrowDown>
           {/if}
-        </h2>
+        </p>
         <p class="feature__description">{feature.subtitle}</p>
         {#if expandedFeature == i}
           <div in:slide out:slide>
@@ -147,8 +147,9 @@
   }
 
   .feature__description {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-weight: 600;
   }
 
   .feature:hover {

@@ -4,6 +4,7 @@
   import Features from "./sections/Features.svelte";
   import HowItWorks from "./sections/HowItWorks.svelte";
   import QA from "./sections/QA.svelte";
+  import Reviews from "./sections/Reviews.svelte";
 </script>
 
 <main class="main">
@@ -18,6 +19,9 @@
   </FadeIn>
   <FadeIn>
     <QA></QA>
+  </FadeIn>
+  <FadeIn>
+    <Reviews></Reviews>
   </FadeIn>
 </main>
 
