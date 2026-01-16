@@ -46,9 +46,9 @@
   }
 </script>
 
-<section class="section l-container">
+<section class="section l-container l-vertical-margin">
   <h1>Why People Choose ICON</h1>
-  <p class="subtitle">
+  <p class="section__subtitle">
     Because success isn’t about working harder it’s about <br /> having the right
     coach by your side, 24/7.
   </p>
@@ -59,7 +59,7 @@
       {#each features as feature, i}
         <button class="feature" onclick={() => selectFeature(i)}>
           <h2>{feature.title}</h2>
-          <p>{feature.subtitle}</p>
+          <p class="feature__description">{feature.subtitle}</p>
         </button>
       {/each}
     </div>
@@ -86,7 +86,7 @@
             <ArrowDown></ArrowDown>
           {/if}
         </h2>
-        <p>{feature.subtitle}</p>
+        <p class="feature__description">{feature.subtitle}</p>
         {#if expandedFeature == i}
           <div in:slide out:slide>
             <img
@@ -108,15 +108,11 @@
     text-align: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 4em;
-    padding-bottom: 4em;
-    gap: 1em;
   }
   .section__layout {
     width: 100%;
     display: flex;
     align-items: center;
-    padding-top: 4em;
     gap: 5em;
   }
   .features {
@@ -133,18 +129,27 @@
     object-fit: contain;
     flex: 1 1 0%;
   }
-  .subtitle {
+
+  .section__subtitle {
     color: var(--dark-white);
+    margin-top: 1em;
+    margin-bottom: 4em;
   }
+
   .feature {
     display: flex;
     flex-direction: column;
-    gap: 1.2em;
-    padding-bottom: 0.8em;
     border-bottom: var(--light-gray) solid 1px;
     transition: color 0.3s ease;
     text-align: left;
+    width: 100%;
   }
+
+  .feature__description {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
   .feature:hover {
     cursor: pointer;
     color: var(--red) !important;
@@ -156,7 +161,6 @@
     display: none;
   }
 
-  /* When screen width is 768px or smaller */
   @media (max-width: 992px) {
     .section__layout {
       display: none;
@@ -165,28 +169,15 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 1em;
       gap: 1em;
     }
-
-    .feature {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2em;
-      padding-bottom: 0.8em;
-      border-bottom: var(--light-gray) solid 1px;
-      text-align: left;
-      width: 100%;
-    }
-
     .feature__image {
       width: 100%;
       max-height: 600px;
       object-fit: contain;
+      margin-top: 1em;
+      margin-bottom: 1em;
     }
-
     .feature__title--phone {
       display: flex;
       align-items: center;

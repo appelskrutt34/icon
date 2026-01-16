@@ -2,6 +2,7 @@
   import FadeIn from "$lib/components/FadeIn.svelte";
   import Hero from "./sections/Hero.svelte";
   import Features from "./sections/Features.svelte";
+  import HowItWorks from "./sections/HowItWorks.svelte";
 </script>
 
 <main class="main">
@@ -11,6 +12,9 @@
   <FadeIn>
     <Features></Features>
   </FadeIn>
+  <FadeIn>
+    <HowItWorks></HowItWorks>
+  </FadeIn>
 </main>
 
 <style>
@@ -18,7 +22,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: 100%;
   }
 </style>
