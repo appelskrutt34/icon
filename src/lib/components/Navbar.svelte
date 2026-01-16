@@ -9,7 +9,9 @@
 <div class="nav">
   <!-- Monitor -->
   <nav class="nav__layout l-container">
-    <a href="/" class="link">Icon</a>
+    <a aria-label="Home" href="/" class="link"
+      ><img src="./icon.png" alt="logo" /></a
+    >
     <div class="nav__pages">
       <a href="/" class="link">Home</a>
       <a href="/" class="link">Trainers</a>
@@ -23,7 +25,7 @@
   <!-- Phone -->
   <nav class="nav__layout--phone l-container">
     <div class="nav__icons--phone">
-      <a href="/">Icon</a>
+      <a aria-label="Home" href="/"><img src="./icon.png" alt="logo" /></a>
       {#if openPhoneMenu === true}
         <button in:scale onclick={() => (openPhoneMenu = false)}>
           <Close></Close>
@@ -59,8 +61,8 @@
     color: var(--white);
     background-color: var(--background);
     border-bottom: 1px solid var(--light-gray);
-    padding-top: 26px;
-    padding-bottom: 26px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   .nav__pages {
@@ -79,8 +81,8 @@
 
   .nav__layout {
     width: 100%;
-
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 

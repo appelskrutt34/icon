@@ -26,6 +26,9 @@
 
 <style>
   .fade__section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     opacity: 0;
     transform: translateY(24px);
     transition:

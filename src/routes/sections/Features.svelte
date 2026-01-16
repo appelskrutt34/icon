@@ -75,7 +75,7 @@
   <div class="section__layout--phone">
     {#each features as feature, i}
       <button
-        class={expandedFeature == i ? "feature feature--active" : "feature"}
+        class={expandedFeature == i ? "feature active" : "feature"}
         onclick={() => toggleFeature(i)}
       >
         <h2 class="feature__title--phone">
@@ -108,6 +108,7 @@
     text-align: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
   }
   .section__layout {
     width: 100%;
@@ -151,11 +152,16 @@
   }
 
   .feature:hover {
-    cursor: pointer;
-    color: var(--red) !important;
-  }
-  .feature--active {
     color: var(--red);
+  }
+  .feature:hover :global(svg) {
+    fill: var(--red);
+  }
+  .feature.active {
+    color: var(--red);
+  }
+  .feature.active :global(svg) {
+    fill: var(--red);
   }
   .section__layout--phone {
     display: none;
