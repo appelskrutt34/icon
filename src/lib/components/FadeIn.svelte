@@ -20,12 +20,12 @@
   });
 </script>
 
-<div bind:this={element} class="fade-section {visible ? 'visible' : ''}">
+<div bind:this={element} class="fade__section {visible ? 'visible' : ''}">
   <slot />
 </div>
 
 <style>
-  .fade-section {
+  .fade__section {
     opacity: 0;
     transform: translateY(24px);
     transition:
@@ -34,7 +34,7 @@
     will-change: opacity, transform;
   }
 
-  .fade-section.visible {
+  .fade__section.visible {
     opacity: 1;
     transform: translateY(0);
   }

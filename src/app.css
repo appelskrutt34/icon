@@ -47,7 +47,7 @@ p {
   margin: 0px;
 }
 
-.base-button {
+.l-button {
   padding-right: 1.2em;
   padding-left: 1.2em;
   padding-top: 1em;
@@ -55,17 +55,17 @@ p {
   border-radius: 1em;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.gray-button {
+.l-gray-button {
   background-color: var(--gray);
 }
-.base-button:hover {
+.l-button:hover {
   background-color: var(--white);
   color: var(--background);
 }
-.red-button {
+.l-red-button {
   background-color: var(--red);
 }
-.base-container {
+.l-container {
   margin-left: 0.8em;
   margin-right: 0.8em;
   max-width: 1400px;

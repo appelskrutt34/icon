@@ -6,11 +6,11 @@
   let openPhoneMenu = $state(false);
 </script>
 
-<div class="header">
+<div class="nav">
   <!-- Monitor -->
-  <nav class="nav base-container">
+  <nav class="nav__layout l-container">
     <a href="/" class="link">Icon</a>
-    <div class="nav-pages">
+    <div class="nav__pages">
       <a href="/" class="link">Home</a>
       <a href="/" class="link">Trainers</a>
       <a href="/" class="link">Pricing</a>
@@ -21,8 +21,8 @@
   </nav>
 
   <!-- Phone -->
-  <nav class="nav-phone base-container">
-    <div class="nav-phone-pages">
+  <nav class="nav__layout--phone l-container">
+    <div class="nav__icons--phone">
       <a href="/">Icon</a>
       {#if openPhoneMenu === true}
         <button in:scale onclick={() => (openPhoneMenu = false)}>
@@ -35,7 +35,7 @@
       {/if}
     </div>
     {#if openPhoneMenu === true}
-      <div in:slide out:slide class="phone-menu">
+      <div in:slide out:slide class="nav__pages--phone">
         <a href="/">Home</a>
         <a href="/">Trainers</a>
         <a href="/">Pricing</a>
@@ -47,7 +47,7 @@
 </div>
 
 <style>
-  .header {
+  .nav {
     display: flex;
     justify-content: center;
     position: fixed;
@@ -59,9 +59,11 @@
     color: var(--white);
     background-color: var(--background);
     border-bottom: 1px solid var(--light-gray);
+    padding-top: 26px;
+    padding-bottom: 26px;
   }
 
-  .nav-pages {
+  .nav__pages {
     display: flex;
     justify-content: center;
     gap: 28px;
@@ -75,44 +77,41 @@
     color: var(--red);
   }
 
-  .nav {
-    padding-top: 26px;
-    padding-bottom: 26px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav-phone {
+  .nav__layout {
     width: 100%;
-    display: none;
-    flex-direction: column;
-    padding-top: 26px;
-    padding-bottom: 26px;
-  }
 
-  .nav-phone-pages {
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
-  .phone-menu {
-    background-color: var(--background);
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    transition: all 0.3s ease;
-    padding-top: 26px;
-    padding-bottom: 26px;
+  .nav__layout--phone {
+    display: none;
   }
 
   @media (max-width: 992px) {
-    .nav {
+    .nav__layout {
       display: none;
     }
 
-    .nav-phone {
+    .nav__layout--phone {
+      width: 100%;
       display: flex;
+      flex-direction: column;
+    }
+
+    .nav__icons--phone {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav__pages--phone {
+      background-color: var(--background);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transition: all 0.3s ease;
+      padding-top: 26px;
     }
   }
 </style>

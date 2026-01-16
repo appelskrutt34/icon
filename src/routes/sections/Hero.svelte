@@ -1,25 +1,25 @@
-<section class="section base-container">
-  <div class="section-content">
-    <h1 class="title">
+<section class="section l-container">
+  <div class="section__content">
+    <h1 class="section__title">
       YOU DONT NEED <br /> MORE
       <span style="color: var(--red)"> WILLPOWER</span>
       <br /> YOU NEED AN ICON
     </h1>
-    <p class="subtitle">
+    <p class="section__subtitle">
       Download your favorite athlete's brain. Straight to your phone.
     </p>
-    <div class="buttons">
-      <button class="base-button gray-button">Complete fitness quiz</button>
-      <button class="base-button red-button">Join Waitlist</button>
+    <div class="section__buttons">
+      <button class="l-button l-gray-button">Complete fitness quiz</button>
+      <button class="l-button l-red-button">Join Waitlist</button>
     </div>
-    <div class="users">
-      <img src="./hero-users.png" alt="" />
+    <div class="section__users">
+      <img src="./hero-users.png" alt="individuals" />
       <p>Trusted by 400+ <br /> individuals worldwide</p>
     </div>
   </div>
-  <img src="./hero-image.png" alt="hero" class="image" />
-  <div class="users-phone">
-    <img src="./hero-users.png" alt="" />
+  <img src="./hero-image.png" alt="hero" class="section__image" />
+  <div class="section__users--phone">
+    <img src="./hero-users.png" alt="individuals" />
     <p>Trusted by 400+ <br /> individuals worldwide</p>
   </div>
 </section>
@@ -30,30 +30,30 @@
     display: flex;
     align-items: center;
   }
-  .image {
+  .section__image {
     width: 100%;
     flex: 1 1 0%;
     object-fit: contain;
   }
-  .section-content {
+  .section__content {
     width: 100%;
     flex: 1 1 0%;
     display: flex;
     flex-direction: column;
     gap: 22px;
   }
-  .title {
+  .section__title {
     font-size: 64px;
   }
-  .subtitle {
+  .section__subtitle {
     color: var(--dark-white);
   }
-  .buttons {
+  .section__buttons {
     display: flex;
     gap: 0.8em;
     align-items: center;
   }
-  .users {
+  .section__users {
     margin-top: 4em;
     padding-left: 1.2em;
     display: flex;
@@ -61,15 +61,15 @@
     border-left: var(--light-gray) solid 1px;
     align-items: center;
   }
-  .users-phone {
+  .section__users--phone {
     display: none;
   }
 
   @media (max-width: 992px) {
-    .users {
+    .section__users {
       display: none;
     }
-    .users-phone {
+    .section__users--phone {
       margin-top: 2em;
       padding-left: 1.2em;
       display: flex;
@@ -86,7 +86,7 @@
       justify-content: center;
       align-items: center;
     }
-    .section-content {
+    .section__content {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -95,7 +95,7 @@
       gap: 18px;
       text-align: center;
     }
-    .title {
+    .section__title {
       font-size: 34px;
     }
   }

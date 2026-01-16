@@ -34,23 +34,19 @@
     },
   ];
 
-  let currentFeature = $state(0);
-  let currentPhoneFeature = $state(0);
+  let activeFeature = $state(0);
+  let expandedFeature = $state(0);
 
-  function toggleFeature(index) {
-    currentFeature = index;
+  function selectFeature(index) {
+    activeFeature = index;
   }
 
-  function togglePhoneFeature(index) {
-    if (currentPhoneFeature == index) {
-      currentPhoneFeature = -1;
-      return;
-    }
-    currentPhoneFeature = index;
+  function toggleFeature(index) {
+    expandedFeature = expandedFeature === index ? -1 : index;
   }
 </script>
 
-<section class="section base-container">
+<section class="section l-container">
   <h1>Why People Choose ICON</h1>
   <p class="subtitle">
     Because success isn’t about working harder it’s about <br /> having the right
@@ -58,10 +54,10 @@
   </p>
 
   <!-- Monitor -->
-  <div class="section-content">
+  <div class="section__layout">
     <div class="features">
       {#each features as feature, i}
-        <button class="feature" onclick={() => toggleFeature(i)}>
+        <button class="feature" onclick={() => selectFeature(i)}>
           <h2>{feature.title}</h2>
           <p>{feature.subtitle}</p>
         </button>
@@ -69,36 +65,34 @@
     </div>
     <img
       in:fade
-      src={features[currentFeature].image}
-      alt={features[currentFeature].altText}
-      class="feature-image"
+      src={features[activeFeature].image}
+      alt={features[activeFeature].altText}
+      class="feature__image"
     />
   </div>
 
   <!-- Phone -->
-  <div class="section-phone-content">
+  <div class="section__layout--phone">
     {#each features as feature, i}
       <button
-        class={currentPhoneFeature == i
-          ? "feature-phone feature-phone-current"
-          : "feature-phone"}
-        onclick={() => togglePhoneFeature(i)}
+        class={expandedFeature == i ? "feature feature--active" : "feature"}
+        onclick={() => toggleFeature(i)}
       >
-        <h2 class="feature-phone-title">
+        <h2 class="feature__title--phone">
           {feature.title}
-          {#if currentPhoneFeature == i}
+          {#if expandedFeature == i}
             <ArrowUp color="fill: var(--red)"></ArrowUp>
           {:else}
             <ArrowDown></ArrowDown>
           {/if}
         </h2>
         <p>{feature.subtitle}</p>
-        {#if currentPhoneFeature == i}
+        {#if expandedFeature == i}
           <div in:slide out:slide>
             <img
-              src={features[currentPhoneFeature].image}
-              alt={features[currentPhoneFeature].altText}
-              class="feature-phone-image"
+              src={features[expandedFeature].image}
+              alt={features[expandedFeature].altText}
+              class="feature__image"
             />
           </div>
         {/if}
@@ -118,7 +112,7 @@
     padding-bottom: 4em;
     gap: 1em;
   }
-  .section-content {
+  .section__layout {
     width: 100%;
     display: flex;
     align-items: center;
@@ -133,7 +127,7 @@
     gap: 1em;
     flex-direction: column;
   }
-  .feature-image {
+  .feature__image {
     width: 100%;
     max-height: 700px;
     object-fit: contain;
@@ -155,16 +149,19 @@
     cursor: pointer;
     color: var(--red) !important;
   }
-  .section-phone-content {
+  .feature--active {
+    color: var(--red);
+  }
+  .section__layout--phone {
     display: none;
   }
 
   /* When screen width is 768px or smaller */
   @media (max-width: 992px) {
-    .section-content {
+    .section__layout {
       display: none;
     }
-    .section-phone-content {
+    .section__layout--phone {
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -173,11 +170,8 @@
       padding-top: 1em;
       gap: 1em;
     }
-    .feature-phone-image {
-      width: 100%;
-      object-fit: contain;
-    }
-    .feature-phone {
+
+    .feature {
       display: flex;
       flex-direction: column;
       gap: 1.2em;
@@ -186,13 +180,17 @@
       text-align: left;
       width: 100%;
     }
-    .feature-phone-title {
+
+    .feature__image {
+      width: 100%;
+      max-height: 600px;
+      object-fit: contain;
+    }
+
+    .feature__title--phone {
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-    .feature-phone-current {
-      color: var(--red);
     }
   }
 </style>
