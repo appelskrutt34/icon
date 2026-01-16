@@ -1,0 +1,104 @@
+:root {
+  --background: #0d0d0d;
+  --red: #e9522b;
+  --white: #ffffff;
+  --gray: #1f1f1f;
+  --light-gray: #2b2b2b;
+  --dark-white: #b7b7b7;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  background-color: var(--background);
+  margin: 0px;
+  padding: 0px;
+}
+
+button,
+a {
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--white);
+  border: none;
+  background: none;
+  padding: 0px;
+  margin: 0px;
+}
+p {
+  font-size: 16px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 32px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.base-button {
+  padding-right: 1.2em;
+  padding-left: 1.2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: 1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.gray-button {
+  background-color: var(--gray);
+}
+.base-button:hover {
+  background-color: var(--white);
+  color: var(--background);
+}
+
+.red-button {
+  background-color: var(--red);
+}
+
+.base-container {
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  max-width: 1400px;
+  width: 100%;
+}
+
+/* When screen width is 992px or smaller */
+@media (max-width: 992px) {
+  button,
+  a,
+  p {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+}
