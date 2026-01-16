@@ -1,7 +1,7 @@
 <script>
   import ArrowDown from "$lib/components/icons/ArrowDown.svelte";
   import ArrowUp from "$lib/components/icons/ArrowUp.svelte";
-  import { fade } from "svelte/transition";
+  import { fade, slide } from "svelte/transition";
 
   let features = [
     {
@@ -35,6 +35,19 @@
   ];
 
   let currentFeature = $state(0);
+  let currentPhoneFeature = $state(0);
+
+  function toggleFeature(index) {
+    currentFeature = index;
+  }
+
+  function togglePhoneFeature(index) {
+    if (currentPhoneFeature == index) {
+      currentPhoneFeature = -1;
+      return;
+    }
+    currentPhoneFeature = index;
+  }
 </script>
 
 <section class="section base-container">
@@ -48,7 +61,7 @@
   <div class="section-content">
     <div class="features">
       {#each features as feature, i}
-        <button class="feature" onclick={() => (currentFeature = i)}>
+        <button class="feature" onclick={() => toggleFeature(i)}>
           <h2>{feature.title}</h2>
           <p>{feature.subtitle}</p>
         </button>
@@ -65,16 +78,30 @@
   <!-- Phone -->
   <div class="section-phone-content">
     {#each features as feature, i}
-      <button class="feature-phone" onclick={() => (currentFeature = i)}>
+      <button
+        class={currentPhoneFeature == i
+          ? "feature-phone feature-phone-current"
+          : "feature-phone"}
+        onclick={() => togglePhoneFeature(i)}
+      >
         <h2 class="feature-phone-title">
           {feature.title}
-          {#if currentFeature == i}
-            <ArrowUp></ArrowUp>
+          {#if currentPhoneFeature == i}
+            <ArrowUp color="fill: var(--red)"></ArrowUp>
           {:else}
             <ArrowDown></ArrowDown>
           {/if}
         </h2>
         <p>{feature.subtitle}</p>
+        {#if currentPhoneFeature == i}
+          <div in:slide out:slide>
+            <img
+              src={features[currentPhoneFeature].image}
+              alt={features[currentPhoneFeature].altText}
+              class="feature-phone-image"
+            />
+          </div>
+        {/if}
       </button>
     {/each}
   </div>
@@ -128,27 +155,44 @@
     cursor: pointer;
     color: var(--red) !important;
   }
-
   .section-phone-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4em;
-    gap: 5em;
+    display: none;
   }
-  .feature-phone {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2em;
-    padding-bottom: 0.8em;
-    border-bottom: var(--light-gray) solid 1px;
-    text-align: left;
-  }
-  .feature-phone-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+  /* When screen width is 768px or smaller */
+  @media (max-width: 992px) {
+    .section-content {
+      display: none;
+    }
+    .section-phone-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 1em;
+      gap: 1em;
+    }
+    .feature-phone-image {
+      width: 100%;
+      object-fit: contain;
+    }
+    .feature-phone {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+      padding-bottom: 0.8em;
+      border-bottom: var(--light-gray) solid 1px;
+      text-align: left;
+      width: 100%;
+    }
+    .feature-phone-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .feature-phone-current {
+      color: var(--red);
+    }
   }
 </style>

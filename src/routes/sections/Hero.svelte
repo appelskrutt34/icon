@@ -65,7 +65,6 @@
     display: none;
   }
 
-  /* When screen width is 768px or smaller */
   @media (max-width: 992px) {
     .users {
       display: none;

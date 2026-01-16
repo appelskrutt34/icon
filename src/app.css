@@ -31,20 +31,6 @@ p {
   font-size: 16px;
 }
 
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-.flex-row {
-  display: flex;
-}
-.align-center {
-  align-items: center;
-}
-.justify-center {
-  justify-content: center;
-}
-
 h1 {
   font-size: 40px;
 }
@@ -76,16 +62,13 @@ p {
   background-color: var(--white);
   color: var(--background);
 }
-
 .red-button {
   background-color: var(--red);
 }
-
 .base-container {
-  padding-left: 0.8em;
-  padding-right: 0.8em;
+  margin-left: 0.8em;
+  margin-right: 0.8em;
   max-width: 1400px;
-  width: 100%;
 }
 
 /* When screen width is 992px or smaller */
