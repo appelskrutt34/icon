@@ -146,6 +146,7 @@
     align-items: center;
     justify-content: space-between;
     font-weight: 600;
+    transition: color 0.3s ease;
   }
   .qa__answer {
     margin-top: 0.5em;
