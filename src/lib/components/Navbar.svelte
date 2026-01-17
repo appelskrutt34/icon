@@ -59,8 +59,8 @@
     width: 100%;
     z-index: 50;
     color: var(--white);
-    background-color: var(--background);
-    border-bottom: 1px solid var(--light-gray);
+    background-color: var(--black);
+    border-bottom: 1px solid var(--medium-gray);
     padding-top: 16px;
     padding-bottom: 16px;
   }
@@ -108,7 +108,7 @@
     }
 
     .nav__pages--phone {
-      background-color: var(--background);
+      background-color: var(--black);
       display: flex;
       flex-direction: column;
       gap: 18px;

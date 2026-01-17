@@ -5,6 +5,7 @@
   import HowItWorks from "./sections/HowItWorks.svelte";
   import QA from "./sections/QA.svelte";
   import Reviews from "./sections/Reviews.svelte";
+  import Journey from "./sections/Journey.svelte";
 </script>
 
 <main class="main">
@@ -22,6 +23,9 @@
   </FadeIn>
   <FadeIn>
     <Reviews></Reviews>
+  </FadeIn>
+  <FadeIn>
+    <Journey></Journey>
   </FadeIn>
 </main>
 

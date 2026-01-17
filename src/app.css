@@ -1,18 +1,23 @@
 :root {
-  --background: #0d0d0d;
+  --black: #0d0d0d;
   --red: #e9522b;
   --white: #ffffff;
   --gray: #1f1f1f;
-  --light-gray: #2b2b2b;
-  --dark-white: #b7b7b7;
+  --medium-gray: #2b2b2b;
+  --light-gray: #a4a4a4;
+  --light-gray: #b7b7b7;
   --max-w: 1400px;
   --blue: #007bf7;
+}
+
+html {
+  font-size: 16px;
 }
 
 body {
   font-family: "Inter", sans-serif;
   color: var(--white);
-  background-color: var(--background);
+  background-color: var(--black);
   margin: 0px;
   padding: 0px;
 }
@@ -37,48 +42,46 @@ p {
 h1 {
   font-size: 40px;
 }
-h2 {
-  font-size: 28px;
-}
 
 h1,
-h2,
-h3,
-h4,
 p {
   padding: 0px;
   margin: 0px;
 }
 
 .l-button {
-  padding-right: 1.2em;
-  padding-left: 1.2em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  border-radius: 1em;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 12px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 600;
 }
 .l-gray-button {
   background-color: var(--gray);
 }
 .l-button:hover {
   background-color: var(--white);
-  color: var(--background);
+  color: var(--black);
 }
 .l-red-button {
   background-color: var(--red);
 }
 .l-container {
-  margin-left: 1em;
-  margin-right: 1em;
+  margin-left: 1rem;
+  margin-right: 1rem;
   max-width: var(--max-w);
 }
 .l-vertical-margin {
-  margin-top: 4em;
-  margin-bottom: 4em;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 .l-medium-font {
   font-size: 18px;
+}
+.l-xmedium-font {
+  font-size: 20px;
 }
 .l-large-font {
   font-weight: 600;
@@ -92,17 +95,43 @@ p {
   font-weight: 600;
   font-size: 32px;
 }
+.l-xxxlarge-font {
+  font-weight: 600;
+  font-size: 48px;
+}
 
 @media (max-width: 992px) {
   button,
   a,
   p {
-    font-size: 12px;
+    font-size: 14px;
   }
   h1 {
     font-size: 20px;
   }
-  h2 {
+  html {
+    font-size: 14px;
+  }
+
+  .l-medium-font,
+  .l-xmedium-font {
     font-size: 16px;
+  }
+
+  .l-large-font {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .l-xlarge-font {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .l-xxlarge-font {
+    font-weight: 600;
+    font-size: 30px;
+  }
+  .l-xxxlarge-font {
+    font-weight: 600;
+    font-size: 40px;
   }
 }

@@ -46,19 +46,19 @@
     font-size: 64px;
   }
   .section__subtitle {
-    color: var(--dark-white);
+    color: var(--light-gray);
   }
   .section__buttons {
     display: flex;
-    gap: 0.8em;
+    gap: 0.8rem;
     align-items: center;
   }
   .section__users {
-    margin-top: 4em;
-    padding-left: 1.2em;
+    margin-top: 4rem;
+    padding-left: 1.2rem;
     display: flex;
-    gap: 0.8em;
-    border-left: var(--light-gray) solid 1px;
+    gap: 0.8rem;
+    border-left: var(--medium-gray) solid 1px;
     align-items: center;
   }
   .section__users--phone {
@@ -70,11 +70,11 @@
       display: none;
     }
     .section__users--phone {
-      margin-top: 2em;
-      padding-left: 1.2em;
+      margin-top: 2rem;
+      padding-left: 1.2rem;
       display: flex;
       gap: 12px;
-      border-left: var(--light-gray) solid 1px;
+      border-left: var(--medium-gray) solid 1px;
       align-items: center;
     }
     .section {

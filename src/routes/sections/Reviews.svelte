@@ -120,7 +120,6 @@
   </div>
 
   <!-- Phone -->
-
   <div class="reviews--phone">
     {#each reviews as review}
       <div class="review">
@@ -165,25 +164,27 @@
     top: -50%;
   }
   .section__subtitle {
-    color: var(--dark-white);
-    margin-top: 1em;
-    margin-bottom: 4em;
+    color: var(--light-gray);
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   .reviews {
     width: 100%;
     display: flex;
     overflow-x: hidden;
     justify-content: flex-start;
-    gap: 1em;
+    gap: 1rem;
   }
   .reviews__top .review:first-child {
-    margin-left: -16em;
+    margin-left: -16rem;
   }
   .reviews__bottom .review:first-child {
-    margin-left: -4em;
+    margin-left: -4rem;
   }
   .reviews__bottom {
-    margin-top: 1em;
+    margin-top: 1rem;
   }
   .review {
     text-align: left;
@@ -195,19 +196,19 @@
     padding: 1em;
   }
   .review__heading {
-    border-bottom: solid 1px var(--light-gray);
+    border-bottom: solid 1px var(--medium-gray);
   }
   .review__image {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
   }
   .review__role {
-    margin-top: 0.2em;
-    margin-bottom: 0.5em;
-    color: var(--dark-white);
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--light-gray);
   }
   .review__comment {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .reviews--phone {
@@ -226,8 +227,8 @@
     }
 
     .reviews--phone {
-      padding-left: 1em;
-      padding-right: 1em;
+      padding-left: 1rem;
+      padding-right: 1rem;
       width: 100%;
       display: flex;
       overflow-x: scroll;
@@ -235,7 +236,7 @@
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
       justify-content: start;
-      gap: 1em;
+      gap: 1rem;
 
       box-sizing: border-box;
     }
