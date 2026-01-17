@@ -102,6 +102,7 @@
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
       justify-content: flex-start;
       gap: 1em;
       padding-left: 1em;
