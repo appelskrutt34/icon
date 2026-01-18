@@ -43,7 +43,7 @@
     gap: 22px;
   }
   .section__title {
-    font-size: 64px;
+    font-size: 48px;
   }
   .section__subtitle {
     color: var(--light-gray);

@@ -6,7 +6,7 @@
   --medium-gray: #2b2b2b;
   --light-gray: #a4a4a4;
   --light-gray: #b7b7b7;
-  --max-w: 1400px;
+  --max-w: 1240px;
   --blue: #007bf7;
 }
 
@@ -74,6 +74,7 @@ p {
 .l-container {
   max-width: var(--max-w);
   margin-inline: auto;
+
   padding-left: 1rem;
   padding-right: 1rem;
 }

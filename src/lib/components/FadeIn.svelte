@@ -11,7 +11,7 @@
       },
       {
         threshold: 0.15,
-      }
+      },
     );
 
     observer.observe(element);
@@ -34,7 +34,6 @@
     transition:
       opacity 0.6s ease,
       transform 0.6s ease;
-    will-change: opacity, transform;
   }
 
   .fade__section.visible {
