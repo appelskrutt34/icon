@@ -31,12 +31,12 @@
 
     <div class="footer__pages__layout">
       <div class="footer__pages">
-        <a href="/" class="link">Home</a>
-        <a href="/" class="link">Trainers</a>
-        <a href="/" class="link">Pricing</a>
-        <a href="/" class="link">About Us</a>
-        <a href="/" class="link">Contact Us</a>
-        <a href="/" class="link">Help</a>
+        <a href="#" class="link">Home</a>
+        <a href="#" class="link">Trainers</a>
+        <a href="#" class="link">Pricing</a>
+        <a href="#" class="link">About Us</a>
+        <a href="#" class="link">Contact Us</a>
+        <a href="#" class="link">Help</a>
       </div>
 
       <div class="footer__links__socialmedia--phone">

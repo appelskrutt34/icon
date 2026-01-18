@@ -9,15 +9,15 @@
 <div class="nav">
   <!-- Monitor -->
   <nav class="nav__layout l-container">
-    <a aria-label="Home" href="/" class="link"
+    <a aria-label="Home" href="#" class="link"
       ><img src="./icon.png" alt="logo" /></a
     >
     <div class="nav__pages">
-      <a href="/" class="link">Home</a>
-      <a href="/" class="link">Trainers</a>
-      <a href="/" class="link">Pricing</a>
-      <a href="/" class="link">About Us</a>
-      <a href="/" class="link">Contact Us</a>
+      <a href="#" class="link">Home</a>
+      <a href="#" class="link">Trainers</a>
+      <a href="#" class="link">Pricing</a>
+      <a href="#" class="link">About Us</a>
+      <a href="#" class="link">Contact Us</a>
     </div>
     <button class="link">Join Waitlist</button>
   </nav>
@@ -25,7 +25,7 @@
   <!-- Phone -->
   <nav class="nav__layout--phone l-container">
     <div class="nav__icons--phone">
-      <a aria-label="Home" href="/"><img src="./icon.png" alt="logo" /></a>
+      <a aria-label="Home" href="#"><img src="./icon.png" alt="logo" /></a>
       {#if openPhoneMenu === true}
         <button in:scale onclick={() => (openPhoneMenu = false)}>
           <Close></Close>
@@ -38,11 +38,11 @@
     </div>
     {#if openPhoneMenu === true}
       <div in:slide out:slide class="nav__pages--phone">
-        <a href="/">Home</a>
-        <a href="/">Trainers</a>
-        <a href="/">Pricing</a>
-        <a href="/">About Us</a>
-        <a href="/">Contact Us</a>
+        <a href="#">Home</a>
+        <a href="#">Trainers</a>
+        <a href="#">Pricing</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
       </div>
     {/if}
   </nav>
