@@ -56,7 +56,9 @@ p {
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
   border-radius: 12px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   font-weight: 600;
 }
 .l-gray-button {
@@ -70,9 +72,10 @@ p {
   background-color: var(--red);
 }
 .l-container {
-  margin-left: 1rem;
-  margin-right: 1rem;
   max-width: var(--max-w);
+  margin-inline: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .l-vertical-margin {
   margin-top: 4rem;

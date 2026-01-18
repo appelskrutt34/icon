@@ -188,8 +188,7 @@
   }
   .review {
     text-align: left;
-    max-width: 500px;
-    flex: 0 0 80%;
+    flex: 0 0 30%;
     scroll-snap-align: center;
     border-radius: 16px;
     background-color: var(--gray);
@@ -239,6 +238,11 @@
       gap: 1rem;
 
       box-sizing: border-box;
+    }
+
+    .review {
+      flex: 0 0 80%;
+      max-width: 400px;
     }
   }
 </style>

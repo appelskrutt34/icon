@@ -7,6 +7,7 @@
   import Reviews from "./sections/Reviews.svelte";
   import Journey from "./sections/Journey.svelte";
   import Contact from "./sections/Contact.svelte";
+  import Footer from "$lib/components/Footer.svelte";
 </script>
 
 <main class="main">
@@ -31,6 +32,7 @@
   <FadeIn>
     <Contact></Contact>
   </FadeIn>
+  <Footer></Footer>
 </main>
 
 <style>

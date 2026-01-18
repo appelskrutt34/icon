@@ -128,7 +128,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 1px; /* border thickness */
+    padding: 2px;
     border-radius: 16px;
     background: linear-gradient(90deg, var(--blue), var(--red), var(--blue));
     background-size: 200% 200%;
