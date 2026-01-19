@@ -59,10 +59,12 @@
     width: 100%;
     z-index: 50;
     color: var(--white);
-    background-color: var(--black);
     border-bottom: 1px solid var(--medium-gray);
     padding-top: 16px;
     padding-bottom: 16px;
+    background-color: rgba(var(--black), var(--black), var(--black), 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .nav__pages {
@@ -108,7 +110,8 @@
     }
 
     .nav__pages--phone {
-      background-color: var(--black);
+      background-color: rgba(var(--black), var(--black), var(--black), 0.3);
+      backdrop-filter: blur(10px);
       display: flex;
       flex-direction: column;
       gap: 18px;
