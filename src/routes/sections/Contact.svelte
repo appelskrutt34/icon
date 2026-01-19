@@ -53,7 +53,7 @@
     padding-top: 4rem;
     padding-bottom: 4rem;
     border-radius: 16px;
-    background-color: var(--gray);
+    background: linear-gradient(to top, var(--gray), var(--black));
     width: 100%;
   }
   .contact_text {

@@ -68,7 +68,7 @@
         <a href="#" class="link policy">Terms & Condition</a>
         <span>|</span>
         <a href="#" class="link policy">Cookie Notice</a>
-
+        <span>|</span>
         <a href="#" class="link policy">Copyright Policy</a>
         <span>|</span>
         <a href="#" class="link policy">Data Policy</a>
