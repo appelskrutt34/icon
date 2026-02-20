@@ -79,14 +79,14 @@
   <!-- Monitor -->
   <div class="reviews__layout">
     <div class="reviews reviews__top">
-      {#each reviews.slice(0, 4) as review}
+      {#each reviews.slice(0, 4) as review, i}
         <div class="review">
           <div class="review__heading">
             <img
               src={review.image}
               alt={review.imageAltText}
               class="review__image"
-              alt="reviewer"
+              alt={review.name}
             />
             <p class="l-xlarge-font">{review.name}</p>
             <p class="review__role">{review.role}</p>
