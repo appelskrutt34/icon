@@ -86,6 +86,7 @@
               src={review.image}
               alt={review.imageAltText}
               class="review__image"
+              alt="reviewer"
             />
             <p class="l-xlarge-font">{review.name}</p>
             <p class="review__role">{review.role}</p>
@@ -115,8 +116,8 @@
         </div>
       {/each}
     </div>
-    <img src="./blur-left.png" alt="" class="image__blur__left" />
-    <img src="./blur-right.png" alt="" class="image__blur__right" />
+    <img src="./blur-left.png" aria-hidden="true" alt="" class="image__blur__left" />
+    <img src="./blur-right.png" aria-hidden="true" alt="" class="image__blur__right" />
   </div>
 
   <!-- Phone -->
