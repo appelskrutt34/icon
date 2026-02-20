@@ -1,8 +1,27 @@
+<script>
+  import { fade } from "svelte/transition";
+
+  let rotatingWords = ["WILLPOWER", "TIME", "MONEY", "EFFORT", "INFO"];
+  let currentIndex = $state(0);
+
+  $effect(() => {
+    const interval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % rotatingWords.length;
+    }, 2000);
+
+    return () => clearInterval(interval);
+  });
+
+  let currentWord = $derived(rotatingWords[currentIndex]);
+</script>
+
 <section class="section l-container">
   <div class="section__content">
     <h1 class="section__title">
       YOU DONT NEED <br /> MORE
-      <span style="color: var(--red)"> WILLPOWER</span>
+      {#key currentWord}
+        <span style="color: var(--red)" in:fade> {currentWord}</span>
+      {/key}
       <br /> YOU NEED AN ICON
     </h1>
     <p class="section__subtitle">
